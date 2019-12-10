@@ -1,0 +1,4 @@
+INSERT INTO `pokemon`.`Trainer` (`idTrainer`, `name`) VALUES ('1', 'RED');
+INSERT INTO `pokemon`.`Trainer` (`idTrainer`, `name`) VALUES ('2', 'BLUE');
+INSERT INTO `pokemon`.`Trainer` (`idTrainer`, `name`) VALUES ('3', 'ASH');
+
