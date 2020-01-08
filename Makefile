@@ -7,7 +7,7 @@ all:
 	@echo "    Preparando el entorno."
 	@echo "    Se necesita ejecutar con sudo para instalar el manejador de paquetes de Python3."
 	@echo "make create_db"
-	@echo "    Crea la base de datos y la incializa."
+	@echo "    Aclaracion este comando solo pobla la base de datos. por favor seguir indicaciones del archivo instalacion.txt"
 	@echo "    Precaucion debe de ser cambiado el Makefile ya que debe introducir su propia contraseña de mysql."
 	@echo "make clean"
 	@echo "    Limpia el proyecto de archivos pycahce"
@@ -29,7 +29,7 @@ prepare-env:
 	@pip3 install -r requirements.txt
 create_db:
 	@if [ ! -d "/base" ]; then \
-		cd base && mysql --user=root --password=root pokemon < base_dump.SQL; \
+		cd base && mysql --user=trainer --password=Trainer1* pokemon < base_dump.SQL; \
 		echo "La base de datos fue inicializada"; \
 	fi
 	@echo OK;
