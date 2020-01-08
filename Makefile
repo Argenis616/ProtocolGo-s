@@ -34,9 +34,9 @@ create_db:
 	fi
 	@echo OK;
 clean:
-	@rm -rf src/__pycache__ 2> /dev/null || true
+	@rm -rf src/model/__pycache__ 2> /dev/null || true
 	@rm src/*.png 2> /dev/null || true
-	@rm -rf /Pokedex 2> /dev/null || true
+	@rm -rf src/Pokedex 2> /dev/null || true
 
 run_client:
 	@cd src && python3 client.py
