@@ -7,7 +7,7 @@ def connec():
     Function that establishes a connection to the database
     """
     try:
-        connection = mysql.connector.connect(host='localhost', database='pokemon', user='root', password='Argenis616@')
+        connection = mysql.connector.connect(host='localhost', database='pokemon', user='trainer', password='Trainer1*')
         return connection;
     except Error as e:
         print("Error while connecting to MySQL", e)

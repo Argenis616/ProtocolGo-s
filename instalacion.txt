@@ -1,0 +1,28 @@
+#instalacion de mysql
+
+$ sudo apt-get install mysql-server
+$ sudo mysql_secure_installation
+$ sudo mysql -u root -p 
+
+#Crear usuario de base de datos en caso de querer usar uno diferente modificar el archivo ProtocolGo-s/src/model/poke_base.py
+
+mysql> CREATE USER 'trainer'@'localhost' IDENTIFIED BY 'Trainer1*';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'trainer'@'localhost';
+
+
+#Esto se hace por el tiempo pero debe darse los privilegios de solo crear y modificar su base de datos.
+
+mysql> CREATE DATABASE pokemon;
+
+# ir a la siguiente ruta ProtocolGo-s/base
+$ mysql -u trainer -p pokemon < base_dump.SQL
+-----------------------------------------------
+instalacion de las dependencias para python 
+$ sudo apt install python3-pip
+$ pip3 install mysql-connector-python
+$ pip3 install pokepy
+
+#Esto se sube provicionalmente ya que se necesitan una serie mayor de comanodos que no creemos acabar para el makefile porfavor corre estos manualmente y ya jala. Esta instalacion la hice en una imagen de linux-mint recien instalada.
+
+PD: Gracias por darnos este tiempo para que se corra correctamente el proyecto 
+

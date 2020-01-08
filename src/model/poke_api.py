@@ -2,6 +2,8 @@ import pokepy
 import urllib
 from requests import get
 import random
+import os, ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 def obtain_ip_address():
     """
@@ -23,6 +25,8 @@ def obtain_img_pokemon(pokemon,ruta=""):
         pokemon:  We pass the pokemon as a parameter.
         ruta : We pass the route as a parameter.
     """
+    if (not os.environ.get('PYTHONHTTPSVERIFY', '') and getattr(ssl, '_create_unverified_context', None)):
+        ssl._create_default_https_context = ssl._create_unverified_context
     poke = pokepy.V2Client().get_pokemon(pokemon)
     url = poke.sprites.front_default
     urllib.request.urlretrieve(url,ruta + str(pokemon) + ".png")
